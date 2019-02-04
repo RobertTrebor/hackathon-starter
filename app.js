@@ -34,6 +34,7 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const graveController = require('./controllers/grave');
 
 /**
  * API keys and Passport configuration.
@@ -143,6 +144,10 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
+/**
+ * VR
+ */
+app.get('/graves', graveController.getGraves);
 /**
  * API examples routes.
  */

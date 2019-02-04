@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h2
+      | VR API
+
+  h3.text-primary Graves
+  table.table.table-bordered.table-hover
+    thead
+      tr
+        th First Name
+        th Last Name
+    tbody
+      for grave in gravelist
+        tr
+          td #{grave.firstname}
+          td #{grave.lastname}
